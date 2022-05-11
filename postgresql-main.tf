@@ -44,7 +44,7 @@ resource "azurerm_postgresql_database" "postgresql-db" {
 resource "azurerm_postgresql_firewall_rule" "postgresql-fw-rule" {
   name                = "${var.prefix}-postgresql-office-access"
   resource_group_name = azurerm_resource_group.postgresql-rg.name
-  server_name         = azurerm_mysql_server.postgresql-server.name
+  server_name         = azurerm_postgresql_server.postgresql-server.name
   start_ip_address    = "210.170.94.100"
   end_ip_address      = "210.170.94.120"
 }
